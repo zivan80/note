@@ -1,61 +1,50 @@
-<html>
+<!DOCTYPE html>
+<html lang="">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="x-dns-prefetch-control" content="on">
-  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-<!-- 给iphone添加到桌面用   -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="IP">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <!-- ios app 结束 -->
-  <link rel="preconnect" href="https://vv.video.qq.com/checktime" crossorigin>
-  <link rel="preconnect" href="https://jsonp-ip.com" crossorigin>
-  <link rel="preconnect" href="https://jsonp-ip.aspot.workers.dev" crossorigin>
-  <link rel="dns-prefetch" href="https://vv.video.qq.com/checktime">
-  <link rel="dns-prefetch" href="https://jsonp-ip.com">
-  <link rel="dns-prefetch" href="https://jsonp-ip.aspot.workers.dev">
-  <style>
-  /* 设置图标的大小和间距 */
-  .icon {
-    width: 30px;
-    height: 30px;
-    margin: 10px;
-  }
-  /* 表格样式 */
-  table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-left: 10px auto; /* 将表格居中并添加外部空间使其更出彩 */
-  }
-  th, td {
-      border: 2px solid #333333; /* 设置单元格边框颜色以及宽度 */
-      padding: 10px;
-      text-align: left;
-  }
-  th {
-      background-color: #9dc575;
-      color:  #333333;
-  }
-  td {
-      background-color: #ECF7ED;
-  }
-/* 表格样式结束 */
-
-  </style>
-  <title>IP</title>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <!-- 给iphone添加到桌面用   -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="IP">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- ios app 结束 -->
+    <link rel="preconnect" href="https://vv.video.qq.com/checktime" crossorigin>
+    <link rel="preconnect" href="https://jsonp-ip.com" crossorigin>
+    <link rel="preconnect" href="https://jsonp-ip.aspot.workers.dev" crossorigin>
+    <link rel="dns-prefetch" href="https://vv.video.qq.com/checktime">
+    <link rel="dns-prefetch" href="https://jsonp-ip.com">
+    <link rel="dns-prefetch" href="https://jsonp-ip.aspot.workers.dev">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>IP</title>
 </head>
 <body>
+<div class="card-header text-white bg-secondary">
+    <!--  modify here for title-->
+    <div class="d-flex justify-content-center align-items-center">
+        <span class="btn btn-dark" style="pointer-events: none;">IP Connection Information</span>
+    </div>
 
-<table id="ipResults">
-    <tr>
-        <th>Connection Type</th>
-        <!-- <th>Direction</th> -->
-        <th>IP Address</th>
-        <th>Location</th>
-        <th>ISP</th>
-    </tr>
-</table>
+</div>
+<!--<div class="card-body">-->
+    <div class="table-responsive">
+
+    <table id="ipResults" class="table table-sm table-bordered table-striped">
+        <tr>
+            <th>Connection Type</th>
+            <th>IP Address</th>
+            <th>Location</th>
+            <th>ISP</th>
+        </tr>
+    </table>
+</div>
+<div class="card-footer bg-secondary">
+    <div class="d-flex justify-content-center align-items-center">
+        <button class="btn btn-dark" onclick="location.reload()">Refresh Page</button>
+    </div>
+</div>
 
 
 <script type="application/javascript">
@@ -85,10 +74,10 @@
         let ipCell = document.createElement('td');
         let locationCell = document.createElement('td');
         let ispCell = document.createElement('td');
-        
+
         nameCell.textContent = name;
         // isCell.textContent = '–>';
-        
+
         let ip;
         if (json.ip) {
             ip = json.ip;
@@ -119,48 +108,61 @@
 <script type="application/javascript" src="https://vv.video.qq.com/checktime?otype=json&callback=getip2"></script>
 <script type="application/javascript" src="https://jsonp-ip.com/?callback=getip3"></script>
 <script type="application/javascript" src="https://jsonp-ip.aspot.workers.dev/?callback=getip4"></script>
-   
-<!-- ----------------- -->
-<button onclick="location.reload()">Refresh Page</button>
 
 <h3>Availabilities</h3>
 <div id="result"></div>
+<style>
+    .icon {
+        width: 30px;
+        height: 30px;
+        /* Make the icons look like squares */
+        object-fit: cover;
+    }
+    #result {
+        /* Create a flex container to center align-items and justify-content */
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 5px;
+    }
+    #result > a {
+        margin: 5px;
+    }
+    #result > p {
+        width: 100%;
+        text-align: center;
+    }
+</style>
 <script>
-window.onload = function() {
-  const websites = ['www.baidu.com', 'www.google.com', 'www.github.com','www.youtube.com',
-                    'www.facebook.com','www.x.com','www.cloudflare.com','chat.openai.com',
-                    'www.flickr.com','www.netflix.com','www.disneyplus.com']; 
-  websites.forEach((website) => {
-    var img = new Image();
-    img.onload = function() {
-      // create a new link (a) element
-      var link = document.createElement('a');
-      // set the href attribute of the link element to the website URL
-      link.href = 'https://' + website;
-      // set the target attribute of the link element to "_blank" so that the website will be opened in a new tab
-      link.target = '_blank';
-      // create a new img element to append it to the link
-      var imgElement = document.createElement("img");
-      // assign the source of the image
-      imgElement.src = 'https://' + website + '/favicon.ico';
-      // add the "icon" class to the img element
-      imgElement.classList.add("icon");
-      // append the newly created img element to the link
-      link.appendChild(imgElement);
-      // append the link to the body
-      document.getElementById("result").appendChild(link);
-    };
-    img.onerror = function() {
-      var p = document.createElement('p');
-      p.innerHTML = website + " inaccessible.";
-      document.getElementById("result").appendChild(p);
-    };
-    img.src = 'https://' + website + '/favicon.ico';
-  });
-}
+    window.onload = function () {
+        const websites = ['www.baidu.com', 'www.google.com', 'www.github.com', 'www.youtube.com',
+            'www.facebook.com', 'www.x.com', 'www.cloudflare.com', 'chat.openai.com',
+            'www.flickr.com', 'www.netflix.com', 'www.disneyplus.com'];
+        websites.forEach((website) => {
+            var img = new Image();
+            img.onload = function () {
+                var link = document.createElement('a');
+                link.href = 'https://' + website;
+                link.target = '_blank';
+                var imgElement = document.createElement("img");
+                imgElement.src = 'https://' + website + '/favicon.ico';
+                imgElement.classList.add("icon");
+                link.appendChild(imgElement);
+                document.getElementById("result").appendChild(link);
+            };
+            img.onerror = function () {
+                var p = document.createElement('p');
+                p.innerHTML = website + " inaccessible.";
+                document.getElementById("result").appendChild(p);
+            };
+            img.src = 'https://' + website + '/favicon.ico';
+        });
+    }
 </script>
 
-<div style="margin-top:20px; text-align:center;">Powered by <a href=https://nnmm.fun>Zivan</a>, <a href=https://gemini.google.com>Gemini</a> & <a href=https://openai.com>ChatGPT</a></div>
+<div style="margin-top:20px; text-align:center;">Powered by <a href=https://nnmm.fun>Zivan</a>, <a
+        href=https://gemini.google.com>Gemini</a> & <a href=https://openai.com>ChatGPT</a></div>
 </body>
 </html>
 
