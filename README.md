@@ -18,14 +18,16 @@
 #### IPTV8 142个频道，cctv3，5+，10等不能看，有咪咕，但阵亡了很多。。。
     https://live.nnmm.fun/8
 
-#### 三大平台直播源，肥羊项目，托在vercel
+### 三大平台直播源，肥羊项目，托在vercel
+
 ##### 虎牙
     https://live.nnmm.fun/hy
 ##### 斗鱼
     https://live.nnmm.fun/dy
 ##### 歪歪
     https://live.nnmm.fun/yy
-- AndroidTV要vlc播放，用了p2p协议分发的，普通直播软件看不了
+
+**AndroidTV要vlc播放，用了p2p协议分发的，普通直播软件看不了**
 
 ### 方便删减cloudflare上域名a记录
 - [批量添加](https://github.com/zivan80/Scripts/blob/master/src/cloudflare/bulk_add.py)
