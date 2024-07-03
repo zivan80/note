@@ -179,7 +179,7 @@ http://gslbserv.itv.cmvideo.cn/index.m3u8?channel-id=ystenlive&Contentid=1000000
 http://gslbserv.itv.cmvideo.cn/index.m3u8?channel-id=ystenlive&Contentid=1000000002000000172&livemode=1&stbId=4
 #EXTINF:-1 group-title="牛哞看",湖南金鹰卡通
 http://gslbserv.itv.cmvideo.cn/index.m3u8?channel-id=ystenlive&Contentid=1000000002000016601&livemode=1&stbId=4
-#EXTINF:-1 group-title"其他",湖南金鹰纪实
+#EXTINF:-1 group-title="其他",湖南金鹰纪实
 http://gslbserv.itv.cmvideo.cn/index.m3u8?channel-id=ystenlive&Contentid=1000000002000011724&livemode=1&stbId=4
 #EXTINF:-1 group-title="牛哞看",江苏优漫卡通
 http://gslbserv.itv.cmvideo.cn/index.m3u8?channel-id=ystenlive&Contentid=1000000002000010063&livemode=1&stbId=4
