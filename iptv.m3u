@@ -87,7 +87,7 @@ http://zzy.ydns.eu:8021/beesport/NBA_TV_Live_TV
 http://zzy.ydns.eu:8021/beesport/Sky_Sports_Football_Live_TV
 #EXTINF:-1 tvg-id="SuperSport-Football" tvg-name="SuperSport Football" tvg-logo="https://assets.livednow.com/logo/SuperSport-Football.png" group-title="国外体育",SuperSport Football
 http://zzy.ydns.eu:8021/beesport/SuperSport_Football_Live_TV
-#EXTINF:-1 tvg-id="SuperSport-LaLiga" tvg-name="SuperSport LaLiga" tvg-logo="https://assets.livednow.com/logo/SuperSport-LaLiga.png" group-title="国外体育育",SuperSport LaLiga
+#EXTINF:-1 tvg-id="SuperSport-LaLiga" tvg-name="SuperSport LaLiga" tvg-logo="https://assets.livednow.com/logo/SuperSport-LaLiga.png" group-title="国外体育",SuperSport LaLiga
 http://zzy.ydns.eu:8021/beesport/SuperSport_LaLiga_Live_TV
 #EXTINF:-1 tvg-id="SuperSport-Tennis" tvg-name="SuperSport Tennis" tvg-logo="https://assets.livednow.com/logo/SuperSport-Tennis.png" group-title="国外体育",SuperSport Tennis
 http://zzy.ydns.eu:8021/beesport/SuperSport_Tennis_Live_TV
