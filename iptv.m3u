@@ -81,31 +81,20 @@ http://gslbserv.itv.cmvideo.cn/index.m3u8?channel-id=ystenlive&Contentid=1000000
 http://gslbserv.itv.cmvideo.cn/index.m3u8?channel-id=ystenlive&Contentid=5000000010000017540&livemode=1&stbId=4
 #EXTINF:-1 group-title="其他",北京冬奥纪实
 http://gslbserv.itv.cmvideo.cn/index.m3u8?channel-id=ystenlive&Contentid=1000000001000001910&livemode=1&stbId=4
-#EXTINF:-1 tvg-id="NBA-TV" tvg-name="NBA TV" tvg-logo="https://assets.livednow.com/logo/NBA-TV.png" group-title="国外体育",NBA TV
-http://zzy.ydns.eu:8021/beesport/NBA_TV_Live_TV
-#EXTINF:-1 tvg-id="Sky-Sports-Football" tvg-name="Sky Sports Football" tvg-logo="https://assets.livednow.com/logo/Sky-Sports-Football.png" group-title="国外体育",Sky Sports Football
-http://zzy.ydns.eu:8021/beesport/Sky_Sports_Football_Live_TV
-#EXTINF:-1 tvg-id="SuperSport-Football" tvg-name="SuperSport Football" tvg-logo="https://assets.livednow.com/logo/SuperSport-Football.png" group-title="国外体育",SuperSport Football
-http://zzy.ydns.eu:8021/beesport/SuperSport_Football_Live_TV
-#EXTINF:-1 tvg-id="SuperSport-LaLiga" tvg-name="SuperSport LaLiga" tvg-logo="https://assets.livednow.com/logo/SuperSport-LaLiga.png" group-title="国外体育",SuperSport LaLiga
-http://zzy.ydns.eu:8021/beesport/SuperSport_LaLiga_Live_TV
-#EXTINF:-1 tvg-id="SuperSport-Tennis" tvg-name="SuperSport Tennis" tvg-logo="https://assets.livednow.com/logo/SuperSport-Tennis.png" group-title="国外体育",SuperSport Tennis
-http://zzy.ydns.eu:8021/beesport/SuperSport_Tennis_Live_TV
-#EXTINF:-1 tvg-id="Tennis-Channel" tvg-name="Tennis Channel" tvg-logo="https://assets.livednow.com/logo/Tennis-Channel.png" group-title="国外体育",Tennis Channel
-http://zzy.ydns.eu:8021/beesport/Tennis_Channel_Live_TV
-#EXTINF:-1 tvg-id="SuperSport-Golf" tvg-name="SuperSport Golf" tvg-logo="https://assets.livednow.com/logo/SuperSport-Golf.png" group-title="国外体育",SuperSport Golf
-http://zzy.ydns.eu:8021/beesport/SuperSport_Golf_Live_TV
-#EXTINF:-1 tvg-id="Premier-Sports-1" tvg-name="Premier Sports 1" tvg-logo="https://assets.livednow.com/logo/Premier-Sports-1.png" group-title="国外体育",Premier Sports 1
-http://zzy.ydns.eu:8021/beesport/Premier_Sports_1
-#EXTINF:-1 tvg-id="Premier-Sports-2" tvg-name="Premier Sports 2" tvg-logo="https://assets.livednow.com/logo/Premier-Sports-2.png" group-title="国外体育",Premier Sports 2
-#EXTINF:-1 tvg-id="ESPN" tvg-name="ESPN" tvg-logo="https://assets.livednow.com/logo/ESPN.png" group-title="国外体育",ESPN60FPS
-http://zzy.ydns.eu:8021/beesport/ESPN_Live_TV
-#EXTINF:-1 tvg-id="ESPN-2" tvg-name="ESPN 2" tvg-logo="https://assets.livednow.com/logo/ESPN-2.png" group-title="国外体育",ESPN2 60FPS
-http://zzy.ydns.eu:8021/beesport/ESPN_2_Live_TV
-#EXTINF:-1 tvg-id="ESPN-News" tvg-name="ESPN News" tvg-logo="https://assets.livednow.com/logo/ESPN-News.png" group-title="国外体育",ESPN News 60FPS
-http://zzy.ydns.eu:8021/beesport/ESPN_News_Live_TV
-#EXTINF:-1 tvg-id="ESPN-U" tvg-name="ESPN U" tvg-logo="https://assets.livednow.com/logo/ESPN-U.png" group-title="国外体育",ESPN U 60FPS
-http://zzy.ydns.eu:8021/beesport/ESPN_U_Live_TV
+#EXTINF:-1,tvg-id="北京IPTV淘BABY" tvg-name="北京IPTV淘BABY" tvg-logo="https://epg.v1.mk/logo/北京IPTV淘BABY.png" group-title="北京",北京IPTV淘精彩
+http://115.171.216.195:4000/udp/225.1.8.33:8002
+#EXTINF:-1,tvg-id="北京IPTV淘BABY" tvg-name="北京IPTV淘BABY" tvg-logo="https://epg.v1.mk/logo/北京IPTV淘BABY.png" group-title="北京",北京IPTV淘BABY
+http://115.171.216.195:4000/udp/225.1.8.36:8002
+#EXTINF:-1,tvg-id="北京IPTV淘剧场" tvg-name="北京IPTV淘剧场" tvg-logo="https://epg.v1.mk/logo/北京IPTV淘剧场.png" group-title="北京",北京IPTV淘剧场
+http://115.171.216.195:4000/udp/225.1.8.37:8002
+#EXTINF:-1,tvg-id="北京IPTV淘电影" tvg-name="北京IPTV淘电影" tvg-logo="https://epg.v1.mk/logo/北京IPTV淘电影.png" group-title="北京",北京IPTV淘电影
+http://115.171.216.195:4000/udp/225.1.8.38:8002
+#EXTINF:-1,tvg-id="北京IPTV淘娱乐" tvg-name="北京IPTV淘娱乐" tvg-logo="https://epg.v1.mk/logo/北京IPTV淘娱乐.png" group-title="北京",北京IPTV淘娱乐
+http://115.171.216.195:4000/udp/225.1.8.61:8002
+#EXTINF:-1,tvg-id="北京IPTV萌宠TV" tvg-name="北京IPTV萌宠TV" tvg-logo="https://epg.v1.mk/logo/北京IPTV萌宠TV.png" group-title="北京",北京IPTV萌宠TV
+http://115.171.216.195:4000/udp/225.1.8.63:8002
+#EXTINF:-1,tvg-id="北京IPTV4K" tvg-name="北京IPTV4K" tvg-logo="https://epg.v1.mk/logo/北京IPTV4K.png" group-title="北京",北京IPTV4K
+http://115.171.216.195:4000/udp/225.1.8.211:8002
 #EXTINF:-1 group-title="NewTV",NewTV中国功夫
 http://gslbserv.itv.cmvideo.cn/index.m3u8?channel-id=ystenlive&Contentid=5897056882324761054&livemode=1&stbId=4
 #EXTINF:-1 group-title="NewTV",NewTV军事评论
