@@ -75,12 +75,40 @@ http://gslbserv.itv.cmvideo.cn/index.m3u8?channel-id=ystenlive&Contentid=1000000
 http://gslbserv.itv.cmvideo.cn/index.m3u8?channel-id=ystenlive&Contentid=8785669936177902664&livemode=1&stbId=4
 #EXTINF:-1 group-title="黑莓",黑莓动画
 http://gslbserv.itv.cmvideo.cn/index.m3u8?channel-id=ystenlive&Contentid=6497762188035533951&livemode=1&stbId=4
-#EXTINF:-1 group-title="其他",上海纪实人文
+#EXTINF:-1 group-title="上海",上海纪实人文
 http://gslbserv.itv.cmvideo.cn/index.m3u8?channel-id=ystenlive&Contentid=1000000001000016545&livemode=1&stbId=4
-#EXTINF:-1 group-title="其他",上海五星体育
+#EXTINF:-1 group-title="上海",上海五星体育
 http://gslbserv.itv.cmvideo.cn/index.m3u8?channel-id=ystenlive&Contentid=5000000010000017540&livemode=1&stbId=4
-#EXTINF:-1 group-title="其他",北京冬奥纪实
+#EXTINF:-1 group-title="北京",北京冬奥纪实
 http://gslbserv.itv.cmvideo.cn/index.m3u8?channel-id=ystenlive&Contentid=1000000001000001910&livemode=1&stbId=4
+#EXTINF:-1,tvg-id="BRTV_ART" tvg-name="BRTV_ART" tvg-logo="https://epg.v1.mk/logo/BRTV_ART.png" group-title="北京",BRTV北京卫视HD
+http://114.246.182.244:8888/rtp/239.3.1.241:8000
+#EXTINF:-1,tvg-id="BRTV_ART" tvg-name="BRTV_ART" tvg-logo="https://epg.v1.mk/logo/BRTV_ART.png" group-title="北京",BRTV新闻HD
+http://114.246.182.244:8888/rtp/239.3.1.159:8000
+#EXTINF:-1,tvg-id="BRTV_ART" tvg-name="BRTV_ART" tvg-logo="https://epg.v1.mk/logo/BRTV_ART.png" group-title="北京",BRTV影视HD
+http://114.246.182.244:8888/rtp/239.3.1.158:8000
+#EXTINF:-1,tvg-id="BRTV_ART" tvg-name="BRTV_ART" tvg-logo="https://epg.v1.mk/logo/BRTV_ART.png" group-title="北京",BRTV文艺HD
+http://114.246.182.244:8888/rtp/239.3.1.242:8000
+#EXTINF:-1,tvg-id="BRTV_ART" tvg-name="BRTV_ART" tvg-logo="https://epg.v1.mk/logo/BRTV_ART.png" group-title="北京",BRTV财经HD
+http://114.246.182.244:8888/rtp/239.3.1.116:8000
+#EXTINF:-1,tvg-id="BRTV_ART" tvg-name="BRTV_ART" tvg-logo="https://epg.v1.mk/logo/BRTV_ART.png" group-title="北京",BRTV生活HD
+http://114.246.182.244:8888/rtp/239.3.1.117:8000
+#EXTINF:-1,tvg-id="BRTV_ART" tvg-name="BRTV_ART" tvg-logo="https://epg.v1.mk/logo/BRTV_ART.png" group-title="北京",BRTV青年HD
+http://114.246.182.244:8888/# rtp/239.3.1.118:8000
+#EXTINF:-1,tvg-id="BRTV纪实科教" tvg-name="BRTV纪实科教" tvg-logo="https://epg.v1.mk/logo/BRTV纪实科教.png" group-title="北京",BRTV纪实科教HD
+http://114.246.182.244:8888/rtp/239.3.1.115:8000
+#EXTINF:-1,tvg-id="BRTV_ART" tvg-name="BRTV_ART" tvg-logo="https://epg.v1.mk/logo/BRTV_ART.png" group-title="北京",BRTV卡酷少儿HD
+http://114.246.182.244:8888/rtp/239.3.1.189:8000
+#EXTINF:-1,tvg-id="BRTV_ART" tvg-name="BRTV_ART" tvg-logo="https://epg.v1.mk/logo/BRTV_ART.png" group-title="北京",BRTV冬奥纪实HD
+http://114.246.182.244:8888/# rtp/239.3.1.243:8000
+#EXTINF:-1,tvg-id="BRTV_ART" tvg-name="BRTV_ART" tvg-logo="https://epg.v1.mk/logo/BRTV_ART.png" group-title="北京",BRTV冬奥纪实[HDR]
+http://114.246.182.244:8888/# rtp/239.3.1.120:8000
+#EXTINF:-1,tvg-id="BRTV_ART" tvg-name="BRTV_ART" tvg-logo="https://epg.v1.mk/logo/BRTV_ART.png" group-title="北京",BRTV冬奥纪实[超清]
+http://114.246.182.244:8888/# rtp/239.3.1.121:8000
+#EXTINF:-1,tvg-id="BRTV_ART" tvg-name="BRTV_ART" tvg-logo="https://epg.v1.mk/logo/BRTV_ART.png" group-title="北京",BRTV体育休闲[超清]
+http://114.246.182.244:8888/rtp/239.3.1.243:8000
+#EXTINF:-1,tvg-id="北京国际" tvg-name="北京国际" tvg-logo="https://epg.v1.mk/logo/北京国际.png" group-title="北京",BTV国际频道
+http://114.246.182.244:8888/rtp/239.3.1.235:8000
 #EXTINF:-1,tvg-id="北京IPTV淘BABY" tvg-name="北京IPTV淘BABY" tvg-logo="https://epg.v1.mk/logo/北京IPTV淘BABY.png" group-title="北京",北京IPTV淘精彩
 http://115.171.216.195:4000/udp/225.1.8.33:8002
 #EXTINF:-1,tvg-id="北京IPTV淘BABY" tvg-name="北京IPTV淘BABY" tvg-logo="https://epg.v1.mk/logo/北京IPTV淘BABY.png" group-title="北京",北京IPTV淘BABY
