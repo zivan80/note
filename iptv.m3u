@@ -144,19 +144,19 @@ http://123.112.22.16:4022/rtp/239.3.1.243:8000
 #EXTINF:-1,tvg-id="北京国际" tvg-name="北京国际" tvg-logo="https://epg.v1.mk/logo/北京国际.png" group-title="北京",BTV国际频道
 http://123.112.22.16:4022/rtp/239.3.1.235:8000
 #EXTINF:-1,tvg-id="北京IPTV淘BABY" tvg-name="北京IPTV淘BABY" tvg-logo="https://epg.v1.mk/logo/北京IPTV淘BABY.png" group-title="北京",北京IPTV淘精彩
-http://115.171.216.195:4000/udp/225.1.8.33:8002
+http://1.203.76.10:7788/udp/225.1.8.33:8002
 #EXTINF:-1,tvg-id="北京IPTV淘BABY" tvg-name="北京IPTV淘BABY" tvg-logo="https://epg.v1.mk/logo/北京IPTV淘BABY.png" group-title="北京",北京IPTV淘BABY
-http://115.171.216.195:4000/udp/225.1.8.36:8002
+http://1.203.76.10:7788/udp/225.1.8.36:8002
 #EXTINF:-1,tvg-id="北京IPTV淘剧场" tvg-name="北京IPTV淘剧场" tvg-logo="https://epg.v1.mk/logo/北京IPTV淘剧场.png" group-title="北京",北京IPTV淘剧场
-http://115.171.216.195:4000/udp/225.1.8.37:8002
+http://1.203.76.10:7788/udp/225.1.8.37:8002
 #EXTINF:-1,tvg-id="北京IPTV淘电影" tvg-name="北京IPTV淘电影" tvg-logo="https://epg.v1.mk/logo/北京IPTV淘电影.png" group-title="北京",北京IPTV淘电影
-http://115.171.216.195:4000/udp/225.1.8.38:8002
+http://1.203.76.10:7788/udp/225.1.8.38:8002
 #EXTINF:-1,tvg-id="北京IPTV淘娱乐" tvg-name="北京IPTV淘娱乐" tvg-logo="https://epg.v1.mk/logo/北京IPTV淘娱乐.png" group-title="北京",北京IPTV淘娱乐
-http://115.171.216.195:4000/udp/225.1.8.61:8002
+http://1.203.76.10:7788/udp/225.1.8.61:8002
 #EXTINF:-1,tvg-id="北京IPTV萌宠TV" tvg-name="北京IPTV萌宠TV" tvg-logo="https://epg.v1.mk/logo/北京IPTV萌宠TV.png" group-title="北京",北京IPTV萌宠TV
-http://115.171.216.195:4000/udp/225.1.8.63:8002
+http://1.203.76.10:7788/udp/225.1.8.63:8002
 #EXTINF:-1,tvg-id="北京IPTV4K" tvg-name="北京IPTV4K" tvg-logo="https://epg.v1.mk/logo/北京IPTV4K.png" group-title="北京",北京IPTV4K
-http://115.171.216.195:4000/udp/225.1.8.211:8002
+http://1.203.76.10:7788/udp/225.1.8.211:8002
 
 #EXTINF:-1,tvg-id="NBATV" tvg-name="NBATV" tvg-logo="https://epg.v1.mk/logo/NBATV.png" group-title="精选体育",NBA TV2
 http://170.yfvodcdn.com:19980/live/nbaTV2/hls.m3u8
