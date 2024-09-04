@@ -36,14 +36,6 @@ http://gslbserv.itv.cmvideo.cn:80/5000000008000023254/index.m3u8?channel-id=best
 #EXTINF:-1 group-title="央视",CCTV17
 http://gslbserv.itv.cmvideo.cn/index.m3u8?channel-id=ystenlive&Contentid=1000000005000056836&livemode=1&stbId=4
 
-#EXTINF:-1,tvg-id="cgtn西语" tvg-name="cgtn西语" tvg-logo="https://epg.v1.mk/logo/cgtn西语.png" group-title="央视",CGTN西语
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2022571703.m3u8 
-#EXTINF:-1,tvg-id="cgtn法语" tvg-name="cgtn法语" tvg-logo="https://epg.v1.mk/logo/cgtn法语.png" group-title="央视",CGTN法语
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2022574903.m3u8 
-#EXTINF:-1,tvg-id="cgtn阿语" tvg-name="cgtn阿语" tvg-logo="https://epg.v1.mk/logo/cgtn阿语.png" group-title="央视",CGTN阿语
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2022574603.m3u8 
-#EXTINF:-1,tvg-id="cgtn俄语" tvg-name="cgtn俄语" tvg-logo="https://epg.v1.mk/logo/cgtn俄语.png" group-title="央视",CGTN俄语
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2022574803.m3u8 
 #EXTINF:-1,tvg-id="中国教育1台" tvg-name="中国教育1台" tvg-logo="https://epg.v1.mk/logo/中国教育1台.png" group-title="教育",中国教育1
 http://mobilelive-ds.ysp.cctv.cn/ysp/2022823801.m3u8 
 
