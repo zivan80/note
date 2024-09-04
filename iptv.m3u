@@ -36,34 +36,6 @@ http://gslbserv.itv.cmvideo.cn:80/5000000008000023254/index.m3u8?channel-id=best
 #EXTINF:-1 group-title="央视",CCTV17
 http://gslbserv.itv.cmvideo.cn/index.m3u8?channel-id=ystenlive&Contentid=1000000005000056836&livemode=1&stbId=4
 
-#EXTINF:-1,tvg-id="世界地理" tvg-name="世界地理" tvg-logo="https://epg.v1.mk/logo/世界地理.png" group-title="央视",CCTV世界地理
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2024172003.m3u8
-#EXTINF:-1,tvg-id="兵器科技" tvg-name="兵器科技" tvg-logo="https://epg.v1.mk/logo/兵器科技.png" group-title="央视",CCTV兵器科技
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2024172103.m3u8
-#EXTINF:-1,tvg-id="第一剧场" tvg-name="第一剧场" tvg-logo="https://epg.v1.mk/logo/第一剧场.png" group-title="央视",CCTV第一剧场
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2024171803.m3u8
-#EXTINF:-1,tvg-id="怀旧剧场" tvg-name="怀旧剧场" tvg-logo="https://epg.v1.mk/logo/怀旧剧场.png" group-title="央视",CCTV怀旧剧场
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2024171903.m3u8
-#EXTINF:-1,tvg-id="风云剧场" tvg-name="风云剧场" tvg-logo="https://epg.v1.mk/logo/风云剧场.png" group-title="央视",CCTV风云剧场
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2024171703.m3u8
-#EXTINF:-1,tvg-id="风云音乐" tvg-name="风云音乐" tvg-logo="https://epg.v1.mk/logo/风云音乐.png" group-title="央视",CCTV风云音乐
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2024163303.m3u8
-#EXTINF:-1,tvg-id="风云足球" tvg-name="风云足球" tvg-logo="https://epg.v1.mk/logo/风云足球.png" group-title="央视",CCTV风云足球
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2012514203.m3u8
-#EXTINF:-1,tvg-id="cctv-高尔夫网球" tvg-name="cctv-高尔夫网球" tvg-logo="https://epg.v1.mk/logo/cctv-高尔夫网球.png" group-title="央视",CCTV高尔夫·网球
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2024166203.m3u8
-#EXTINF:-1,tvg-id="央视台球" tvg-name="央视台球" tvg-logo="https://epg.v1.mk/logo/央视台球.png" group-title="央视",CCTV央视台球
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2024172403.m3u8
-#EXTINF:-1,tvg-id="电视指南" tvg-name="电视指南" tvg-logo="https://epg.v1.mk/logo/电视指南.png" group-title="央视",CCTV电视指南
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2024172503.m3u8
-#EXTINF:-1,tvg-id="女性时尚" tvg-name="女性时尚" tvg-logo="https://epg.v1.mk/logo/女性时尚.png" group-title="央视",CCTV女性时尚
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2024172203.m3u8
-#EXTINF:-1,tvg-id="卫生健康" tvg-name="卫生健康" tvg-logo="https://epg.v1.mk/logo/卫生健康.png" group-title="央视",CCTV卫生健康
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2024165201.m3u8
-#EXTINF:-1,tvg-id="cgtn" tvg-name="cgtn" tvg-logo="https://epg.v1.mk/logo/cgtn.png" group-title="央视",CGTN
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2022575001.m3u8 
-#EXTINF:-1,tvg-id="cgtn纪录" tvg-name="cgtn纪录" tvg-logo="https://epg.v1.mk/logo/cgtn纪录.png" group-title="央视",CGTN纪录
-http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2022574703.m3u8 
 #EXTINF:-1,tvg-id="cgtn西语" tvg-name="cgtn西语" tvg-logo="https://epg.v1.mk/logo/cgtn西语.png" group-title="央视",CGTN西语
 http://116.148.164.119/bkbktlivecloud-cdn.ysp.cctv.cn/ysp/2022571703.m3u8 
 #EXTINF:-1,tvg-id="cgtn法语" tvg-name="cgtn法语" tvg-logo="https://epg.v1.mk/logo/cgtn法语.png" group-title="央视",CGTN法语
