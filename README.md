@@ -1,6 +1,7 @@
 # zivan的记事本
+
 ### 自用iptv
-- [订阅地址](https://zbdy.us.kg/9)
+- [订阅地址](iptv.m3u)
 
 ### 方便删减cloudflare上域名a记录
 - [批量添加](https://github.com/zivan80/Scripts/blob/master/src/cloudflare/bulk_add.py)
@@ -9,7 +10,5 @@
 
 ### 用GPT写了一个方便查IP的页面
 - [GitHub上](checkip)
-
 - [Cloudflare上](https://ip.nnmm.fun)
-
 - [InfintiyFree上](https://zivan.000.pe)
