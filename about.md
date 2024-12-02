@@ -1,8 +1,3 @@
----
-layout: j
-title: about me
-permalink: /about/
----
 
 # 关于我
 
