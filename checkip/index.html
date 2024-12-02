@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="">
+<html>
 <head>
     <meta charset="UTF-8">
-    <!--    防止缓存-->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-    <!--    缓存完-->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <meta http-equiv="x-dns-prefetch-control" content="on">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
@@ -14,7 +8,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="IP">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
     <!-- ios app 结束 -->
     <link rel="preconnect" href="https://vv.video.qq.com/checktime" crossorigin>
     <link rel="preconnect" href="https://jsonp-ip.com" crossorigin>
@@ -22,152 +16,430 @@
     <link rel="dns-prefetch" href="https://vv.video.qq.com/checktime">
     <link rel="dns-prefetch" href="https://jsonp-ip.com">
     <link rel="dns-prefetch" href="https://jsonp-ip.aspot.workers.dev">
-    <link rel="stylesheet" href="https://cdn.staticfile.net/bootstrap/4.5.3/css/bootstrap.min.css">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f5f6fa;
+            --text-color: #2c3e50;
+            --border-color: #e1e8ed;
+            --hover-color: #357abd;
+            --success-color: #2ecc71;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #f8f9fa;
+        }
+
+        /* 表格样式 */
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        td {
+            background-color: white;
+        }
+
+        tr:hover td {
+            background-color: var(--secondary-color);
+            transition: background-color 0.3s ease;
+        }
+
+        /* 按钮样式 */
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin: 20px 0;
+        }
+
+        button:hover {
+            background-color: var(--hover-color);
+        }
+
+        /* 标题样式 */
+        h3 {
+            color: var(--text-color);
+            margin: 30px 0 20px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        /* 可用性检测区域 */
+        #result {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .site-status {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 12px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .site-status:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .site-status .icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+
+        .site-status .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .status-dot.online {
+            background-color: var(--success-color);
+        }
+
+        .status-dot.offline {
+            background-color: #e74c3c;
+        }
+
+        .site-status .response-time {
+            font-size: 12px;
+            color: #666;
+            margin-left: 8px;
+        }
+
+        /* IP显示相关样式 */
+        .loading {
+            position: relative;
+            opacity: 0.7;
+        }
+
+        .loading::after {
+            content: "Loading...";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .copy-button {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            padding: 4px 8px;
+            margin: 0;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .copy-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .error {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* 页脚样式 */
+        .footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            color: #666;
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--hover-color);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            th, td {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            #result {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            th, td {
+                padding: 8px;
+                font-size: 13px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
     <title>IP</title>
 </head>
 <body>
-<div class="card-header text-white bg-secondary">
-    <!--  modify here for title-->
-    <div class="d-flex justify-content-center align-items-center">
-        <span class="btn btn-dark" style="pointer-events: none;">IP Connection Information</span>
+    <div class="table-container">
+        <table id="ipResults">
+            <tr>
+                <th>Connection Type</th>
+                <th>IP Address</th>
+                <th>Location</th>
+                <th>ISP</th>
+            </tr>
+        </table>
     </div>
 
-</div>
-<!--<div class="card-body">-->
-    <div class="table-responsive">
+    <button onclick="location.reload()">Refresh Page</button>
 
-    <table id="ipResults" class="table table-sm table-bordered table-striped">
-        <tr>
-            <th>Connection Type</th>
-            <th>IP Address</th>
-            <th>Location</th>
-            <th>ISP</th>
-        </tr>
-    </table>
-</div>
-<div class="card-footer bg-secondary">
-    <div class="d-flex justify-content-center align-items-center">
-        <button class="btn btn-dark" onclick="location.reload()">Refresh Page</button>
+    <h3>Availabilities</h3>
+    <div id="result"></div>
+
+    <script>
+        var apiUrls = {
+            "https://vv.video.qq.com/checktime": "Direct",
+            "https://jsonp-ip.com/": "Worker Or Pages",
+            "https://jsonp-ip.aspot.workers.dev/": "ProxyIP"
+        };
+
+        function getip2(json) {
+            processResponse(json, apiUrls["https://vv.video.qq.com/checktime"]);
+        }
+
+        function getip3(json) {
+            processResponse(json, apiUrls["https://jsonp-ip.com/"]);
+        }
+
+        function getip4(json) {
+            processResponse(json, apiUrls["https://jsonp-ip.aspot.workers.dev/"]);
+        }
+
+        function processResponse(json, name) {
+            const ipResultsTable = document.getElementById("ipResults");
+            let newLine = document.createElement('tr');
+            let nameCell = document.createElement('td');
+            let ipCell = document.createElement('td');
+            let locationCell = document.createElement('td');
+            let ispCell = document.createElement('td');
+
+            nameCell.textContent = name;
+            newLine.classList.add('loading');
+
+            let ip;
+            if (json.ip) {
+                ip = json.ip;
+            } else if (json.status === 'success') {
+                ip = json.query;
+            } else {
+                ipCell.textContent = 'Error';
+                ipCell.classList.add('error');
+            }
+
+            if (ip) {
+                fetch('https://api.ip.sb/geoip/' + ip)
+                    .then(response => response.json())
+                    .then(data => {
+                        newLine.classList.remove('loading');
+                        // 创建IP地址单元格的内容
+                        const ipContent = document.createElement('div');
+                        ipContent.style.display = 'flex';
+                        ipContent.style.alignItems = 'center';
+                        ipContent.style.gap = '8px';
+                        
+                        const ipText = document.createElement('span');
+                        ipText.textContent = ip;
+                        
+                        const copyButton = document.createElement('button');
+                        copyButton.textContent = '复制';
+                        copyButton.className = 'copy-button';
+                        copyButton.onclick = () => {
+                            navigator.clipboard.writeText(ip).then(() => {
+                                copyButton.textContent = '已复制!';
+                                setTimeout(() => {
+                                    copyButton.textContent = '复制';
+                                }, 2000);
+                            });
+                        };
+                        
+                        ipContent.appendChild(ipText);
+                        ipContent.appendChild(copyButton);
+                        ipCell.appendChild(ipContent);
+                        
+                        locationCell.textContent = data.country + ', ' + data.region + ', ' + data.city;
+                        ispCell.textContent = data.organization;
+                        
+                        newLine.appendChild(nameCell);
+                        newLine.appendChild(ipCell);
+                        newLine.appendChild(locationCell);
+                        newLine.appendChild(ispCell);
+                        ipResultsTable.appendChild(newLine);
+                    })
+                    .catch(error => {
+                        newLine.classList.remove('loading');
+                        console.error('Error:', error);
+                        ipCell.textContent = 'Error fetching data';
+                        ipCell.classList.add('error');
+                        locationCell.textContent = 'N/A';
+                        ispCell.textContent = 'N/A';
+                        
+                        newLine.appendChild(nameCell);
+                        newLine.appendChild(ipCell);
+                        newLine.appendChild(locationCell);
+                        newLine.appendChild(ispCell);
+                        ipResultsTable.appendChild(newLine);
+                    });
+            }
+        }
+
+        // 网站可用性检测代码
+        window.onload = function () {
+            const websites = [
+                'www.baidu.com',
+                'www.google.com',
+                'www.github.com',
+                'www.youtube.com',
+                'www.facebook.com',
+                'www.x.com',
+                'www.cloudflare.com',
+                'www.chatgpt.com',
+                'www.flickr.com',
+                'www.netflix.com',
+                'www.disneyplus.com',
+                'www.yahoo.com'
+            ];
+
+            websites.forEach((website) => {
+                checkWebsite(website);
+            });
+        }
+
+        function checkWebsite(website) {
+            const startTime = performance.now();
+            const timeout = 5000; // 5 seconds timeout
+
+            // 创建容器元素
+            const container = document.createElement('div');
+            container.className = 'site-status';
+            
+            // 创建状态点
+            const statusDot = document.createElement('span');
+            statusDot.className = 'status-dot';
+            
+            // 创建网站名称元素
+            const nameSpan = document.createElement('span');
+            nameSpan.textContent = website;
+            
+            // 创建响应时间元素
+            const responseTime = document.createElement('span');
+            responseTime.className = 'response-time';
+
+            // 组装元素
+            container.appendChild(statusDot);
+            container.appendChild(nameSpan);
+            container.appendChild(responseTime);
+
+            // 添加到结果区域
+            document.getElementById('result').appendChild(container);
+
+            // 使用 fetch 代替图片加载
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), timeout);
+
+            fetch(`https://${website}/favicon.ico`, {
+                mode: 'no-cors',
+                signal: controller.signal
+            })
+            .then(() => {
+                const endTime = performance.now();
+                const duration = Math.round(endTime - startTime);
+                statusDot.classList.add('online');
+                responseTime.textContent = `${duration}ms`;
+                container.href = `https://${website}`;
+                container.target = '_blank';
+            })
+            .catch(() => {
+                statusDot.classList.add('offline');
+                responseTime.textContent = 'Timeout';
+            })
+            .finally(() => {
+                clearTimeout(timeoutId);
+            });
+        }
+    </script>
+
+    <script type="application/javascript" src="https://vv.video.qq.com/checktime?otype=json&callback=getip2"></script>
+    <script type="application/javascript" src="https://jsonp-ip.com/?callback=getip3"></script>
+    <script type="application/javascript" src="https://jsonp-ip.aspot.workers.dev/?callback=getip4"></script>
+
+    <div class="footer">
+        Powered by <a href="https://nnmm.fun">Zivan</a>, <a href="https://gemini.google.com">Gemini</a>, <a href="https://chatgpt.com">ChatGPT</a> & <a href="https://github.com/codeium">Codeium</a>
     </div>
-</div>
-
-
-<script type="application/javascript">
-    var apiUrls = {
-        "https://vv.video.qq.com/checktime": "Direct",
-        "https://jsonp-ip.com/": "Worker Or Pages",
-        "https://jsonp-ip.aspot.workers.dev/": "ProxyIP"
-    };
-
-    function getip2(json) {
-        processResponse(json, apiUrls["https://vv.video.qq.com/checktime"]);
-    }
-
-    function getip3(json) {
-        processResponse(json, apiUrls["https://jsonp-ip.com/"]);
-    }
-
-    function getip4(json) {
-        processResponse(json, apiUrls["https://jsonp-ip.aspot.workers.dev/"]);
-    }
-
-    function processResponse(json, name) {
-        const ipResultsTable = document.getElementById("ipResults");
-        let newLine = document.createElement('tr');
-        let nameCell = document.createElement('td');
-        let isCell = document.createElement('td');
-        let ipCell = document.createElement('td');
-        let locationCell = document.createElement('td');
-        let ispCell = document.createElement('td');
-
-        nameCell.textContent = name;
-        // isCell.textContent = '–>';
-
-        let ip;
-        if (json.ip) {
-            ip = json.ip;
-        } else if (json.status === 'success') {
-            ip = json.query;
-        } else {
-            ipCell.textContent = 'Error';
-        }
-
-        if(ip) {
-            fetch('https://api.ip.sb/geoip/' + ip)
-                .then(response => response.json())
-                .then(data => {
-                    ipCell.textContent = ip;
-                    locationCell.textContent = data.country + ', ' + data.region + ', ' + data.city;
-                    ispCell.textContent = data.organization;
-                    newLine.appendChild(nameCell);
-                    newLine.appendChild(ipCell);
-                    newLine.appendChild(locationCell);
-                    newLine.appendChild(ispCell);
-                    ipResultsTable.appendChild(newLine);
-                })
-                .catch(error => console.error('Error:', error));
-        }
-    }
-</script>
-
-<script type="application/javascript" src="https://vv.video.qq.com/checktime?otype=json&callback=getip2"></script>
-<script type="application/javascript" src="https://jsonp-ip.com/?callback=getip3"></script>
-<script type="application/javascript" src="https://jsonp-ip.aspot.workers.dev/?callback=getip4"></script>
-
-<h3>Availabilities</h3>
-<div id="result"></div>
-<style>
-    .icon {
-        width: 30px;
-        height: 30px;
-        /* Make the icons look like squares */
-        object-fit: cover;
-    }
-    #result {
-        /* Create a flex container to center align-items and justify-content */
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        margin: 5px;
-    }
-    #result > a {
-        margin: 5px;
-    }
-    #result > p {
-        width: 100%;
-        text-align: center;
-    }
-</style>
-<script>
-    window.onload = function () {
-        const websites = ['www.baidu.com', 'www.google.com', 'www.github.com', 'www.youtube.com',
-            'www.facebook.com', 'www.x.com', 'www.cloudflare.com', 'chat.openai.com',
-            'www.flickr.com', 'www.netflix.com', 'www.disneyplus.com'];
-        websites.forEach((website) => {
-            var img = new Image();
-            img.onload = function () {
-                var link = document.createElement('a');
-                link.href = 'https://' + website;
-                link.target = '_blank';
-                var imgElement = document.createElement("img");
-                imgElement.src = 'https://' + website + '/favicon.ico';
-                imgElement.classList.add("icon");
-                link.appendChild(imgElement);
-                document.getElementById("result").appendChild(link);
-            };
-            img.onerror = function () {
-                var p = document.createElement('p');
-                p.innerHTML = website + " inaccessible.";
-                document.getElementById("result").appendChild(p);
-            };
-            img.src = 'https://' + website + '/favicon.ico';
-        });
-    }
-</script>
-
-<div style="margin-top:20px; text-align:center;">Powered by <a href=https://nnmm.fun>Zivan</a>, <a
-        href=https://gemini.google.com>Gemini</a> & <a href=https://openai.com>ChatGPT</a></div>
 </body>
 </html>
-
