@@ -11,4 +11,4 @@
 
 ---
 
-*注：此页面使用GitHub Pages生成，源代码可在[这里](https://zivan80.github.com/note)找到。*
+*注：此页面使用GitHub Pages生成，源代码可在[这里](https://zivan80.github.io/note)找到。*
