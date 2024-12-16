@@ -858,3 +858,5 @@ https://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/f93cb9edd30544b787
 https://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/7fc7a246576744e1b032622846c1fd43/1200.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/linitfor/epg/main/logo/熊熊乐园52.png" group-title="熊熊乐园",熊熊乐园52
 https://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/23d304c091184090b3b6ceef8822a273/1200.m3u8
+#EXTINF:-1 tvg-logo="" group-title="牛牛哞哞",小猪佩奇
+http://zzy.ydns.eu:21342/nnmm/%E5%B0%8F%E7%8C%AA%E4%BD%A9%E5%A5%871-10%E5%AD%A3%E4%B8%AD%E6%96%87%E7%89%88/%E7%AC%AC1%E5%AD%A3%EF%BC%8852%E9%9B%86%EF%BC%89/%E7%AC%AC01%E9%9B%86%20%E6%B3%A5%E5%9D%91.mp4
