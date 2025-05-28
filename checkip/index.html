@@ -266,7 +266,9 @@
         var apiUrls = {
             "https://vv.video.qq.com/checktime": "Direct",
             "https://jsonp-ip.com/": "Worker Or Pages",
-            "https://jsonp-ip.aspot.workers.dev/": "ProxyIP"
+            "https://jsonp-ip.aspot.workers.dev/": "ProxyIP",
+            "https://chatgpt.com/cdn-cgi/trace": "ChatGPT"
+
         };
 
         function getip2(json) {
@@ -280,7 +282,30 @@
         function getip4(json) {
             processResponse(json, apiUrls["https://jsonp-ip.aspot.workers.dev/"]);
         }
+        async function getCloudflareJSON() {
+        let data = await fetch('https://chatgpt.com/cdn-cgi/trace').then(res => res.text());
+        let arr = data.trim().split('\n').map(e => e.split('='));
+        return Object.fromEntries(arr);
+    }
 
+    function getip5() {
+        getCloudflareJSON().then(json => {
+            processResponse({ ip: json.ip }, apiUrls["https://chatgpt.com/cdn-cgi/trace"]);
+        }).catch(error => {
+            console.error('Error fetching ChatGPT trace:', error);
+            const ipCell = document.createElement('td');
+            ipCell.textContent = 'Error fetching data';
+            ipCell.classList.add('error');
+            const newLine = document.createElement('tr');
+            newLine.classList.add('loading');
+            newLine.appendChild(document.createElement('td')).textContent = apiUrls["https://chatgpt.com/cdn-cgi/trace"];
+            newLine.appendChild(ipCell);
+            newLine.appendChild(document.createElement('td')).textContent = 'N/A';
+            newLine.appendChild(document.createElement('td')).textContent = 'N/A';
+            document.getElementById("ipResults").appendChild(newLine);
+            newLine.classList.remove('loading');
+        });
+    }
         function processResponse(json, name) {
             const ipResultsTable = document.getElementById("ipResults");
             let newLine = document.createElement('tr');
@@ -437,7 +462,9 @@
     <script type="application/javascript" src="https://vv.video.qq.com/checktime?otype=json&callback=getip2"></script>
     <script type="application/javascript" src="https://jsonp-ip.com/?callback=getip3"></script>
     <script type="application/javascript" src="https://jsonp-ip.aspot.workers.dev/?callback=getip4"></script>
-
+    <script type="application/javascript">
+        getip5();
+    </script>
     <div class="footer">
         Powered by <a href="https://nnmm.fun">Zivan</a>, <a href="https://gemini.google.com">Gemini</a>, <a href="https://chatgpt.com">ChatGPT</a> & <a href="https://github.com/codeium">Codeium</a>
     </div>
