@@ -18,12 +18,34 @@
     <link rel="dns-prefetch" href="https://jsonp-ip.aspot.workers.dev">
     <style>
         :root {
-            --primary-color: #4a90e2;
-            --secondary-color: #f5f6fa;
-            --text-color: #2c3e50;
-            --border-color: #e1e8ed;
-            --hover-color: #357abd;
-            --success-color: #2ecc71;
+            --primary-color: #667eea;
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-color: #f8fafc;
+            --text-color: #2d3748;
+            --text-light: #718096;
+            --border-color: #e2e8f0;
+            --hover-color: #5a67d8;
+            --success-color: #48bb78;
+            --error-color: #f56565;
+            --warning-color: #ed8936;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #7c3aed;
+            --primary-gradient: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+            --secondary-color: #1a202c;
+            --text-color: #f7fafc;
+            --text-light: #a0aec0;
+            --border-color: #2d3748;
+            --hover-color: #8b5cf6;
+            --card-bg: rgba(45, 55, 72, 0.95);
         }
 
         * {
@@ -39,213 +61,508 @@
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
-            background-color: #f8f9fa;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+            z-index: -1;
+            animation: backgroundShift 20s ease-in-out infinite;
+        }
+
+        @keyframes backgroundShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* 主题切换按钮 */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* 页面标题 */
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #fff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
         }
 
         /* 表格样式 */
         .table-container {
             overflow-x: auto;
             margin: 20px 0;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-xl);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            background-color: white;
+            background: transparent;
         }
 
         th, td {
-            padding: 15px;
+            padding: 18px 20px;
             text-align: left;
-            border: 1px solid var(--border-color);
+            border: none;
+            border-bottom: 1px solid var(--border-color);
         }
 
         th {
-            background-color: var(--primary-color);
+            background: var(--primary-gradient);
             color: white;
             font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        th:first-child {
+            border-top-left-radius: var(--border-radius);
+        }
+
+        th:last-child {
+            border-top-right-radius: var(--border-radius);
         }
 
         td {
-            background-color: white;
+            background: transparent;
+            color: var(--text-color);
+            transition: var(--transition);
         }
 
         tr:hover td {
-            background-color: var(--secondary-color);
-            transition: background-color 0.3s ease;
+            background-color: rgba(102, 126, 234, 0.05);
+            transform: scale(1.01);
+        }
+
+        tr:last-child td:first-child {
+            border-bottom-left-radius: var(--border-radius);
+        }
+
+        tr:last-child td:last-child {
+            border-bottom-right-radius: var(--border-radius);
         }
 
         /* 按钮样式 */
-        button {
-            background-color: var(--primary-color);
+        .refresh-button {
+            background: var(--primary-gradient);
             color: white;
             border: none;
-            padding: 12px 24px;
-            border-radius: 6px;
+            padding: 14px 28px;
+            border-radius: var(--border-radius);
             cursor: pointer;
             font-size: 16px;
-            transition: background-color 0.3s ease;
-            margin: 20px 0;
+            font-weight: 600;
+            transition: var(--transition);
+            margin: 30px auto;
+            display: block;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
         }
 
-        button:hover {
-            background-color: var(--hover-color);
+        .refresh-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .refresh-button:hover::before {
+            left: 100%;
+        }
+
+        .refresh-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .refresh-button:active {
+            transform: translateY(0);
         }
 
         /* 标题样式 */
-        h3 {
+        .section-title {
             color: var(--text-color);
-            margin: 30px 0 20px;
-            font-size: 24px;
-            font-weight: 600;
+            margin: 40px 0 25px;
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideInUp 0.8s ease-out;
         }
 
         /* 可用性检测区域 */
         #result {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideInUp 1s ease-out;
         }
 
         .site-status {
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            padding: 8px 12px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
             text-decoration: none;
             color: var(--text-color);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .site-status::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .site-status:hover::before {
+            transform: translateX(100%);
         }
 
         .site-status:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-
-        .site-status .icon {
-            width: 16px;
-            height: 16px;
-            margin-right: 8px;
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .site-status .status-dot {
-            width: 8px;
-            height: 8px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            margin-right: 8px;
+            margin-right: 12px;
+            position: relative;
+            flex-shrink: 0;
         }
 
         .status-dot.online {
             background-color: var(--success-color);
+            box-shadow: 0 0 10px rgba(72, 187, 120, 0.5);
+            animation: pulse 2s infinite;
         }
 
         .status-dot.offline {
-            background-color: #e74c3c;
+            background-color: var(--error-color);
+            box-shadow: 0 0 10px rgba(245, 101, 101, 0.5);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(72, 187, 120, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(72, 187, 120, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(72, 187, 120, 0); }
+        }
+
+        .site-status .site-name {
+            flex-grow: 1;
+            font-weight: 600;
+            color: var(--text-color);
         }
 
         .site-status .response-time {
             font-size: 12px;
-            color: #666;
-            margin-left: 8px;
+            color: var(--text-light);
+            background: rgba(102, 126, 234, 0.1);
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        /* 深色模式下的特殊样式 */
+        [data-theme="dark"] .site-status .site-name {
+            color: #f7fafc;
+        }
+
+        [data-theme="dark"] .site-status .response-time {
+            color: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         /* IP显示相关样式 */
         .loading {
             position: relative;
-            opacity: 0.7;
+            opacity: 0.8;
         }
 
         .loading::after {
-            content: "Loading...";
+            content: "";
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: var(--primary-color);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-size: 14px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-top: 2px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
         .copy-button {
-            background: none;
+            background: var(--primary-gradient);
             border: none;
-            color: var(--primary-color);
-            padding: 4px 8px;
-            margin: 0;
+            color: white;
+            padding: 6px 12px;
+            margin: 0 0 0 8px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 12px;
+            border-radius: 20px;
+            transition: var(--transition);
+            font-weight: 500;
         }
 
         .copy-button:hover {
-            background-color: var(--secondary-color);
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .copy-button:active {
+            transform: scale(0.95);
         }
 
         .error {
-            color: #e74c3c;
+            color: var(--error-color);
             font-size: 14px;
             margin-top: 5px;
+            font-weight: 500;
         }
 
         /* 页脚样式 */
         .footer {
-            margin-top: 40px;
-            padding: 20px;
+            margin-top: 60px;
+            padding: 30px;
             text-align: center;
-            border-top: 1px solid var(--border-color);
-            color: #666;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-color);
+            animation: slideInUp 1.2s ease-out;
         }
 
         .footer a {
-            color: var(--primary-color);
+            color: var(--text-color);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: var(--transition);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 50%;
+            background: var(--primary-gradient);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        .footer a:hover::after {
+            width: 100%;
         }
 
         .footer a:hover {
             color: var(--hover-color);
+            transform: translateY(-1px);
+        }
+
+        /* 深色模式下的页脚特殊样式 */
+        [data-theme="dark"] .footer {
+            color: #f7fafc;
+        }
+
+        [data-theme="dark"] .footer a {
+            color: #f7fafc;
+        }
+
+        [data-theme="dark"] .footer a:hover {
+            color: #e2e8f0;
         }
 
         /* 响应式设计 */
         @media (max-width: 768px) {
             body {
-                padding: 10px;
+                padding: 15px;
+            }
+
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                padding: 15px;
             }
 
             th, td {
-                padding: 10px;
+                padding: 12px 15px;
                 font-size: 14px;
             }
 
-            button {
+            .refresh-button {
                 width: 100%;
+                margin: 20px 0;
             }
 
             #result {
-                justify-content: center;
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .theme-toggle {
+                width: 45px;
+                height: 45px;
+                top: 15px;
+                right: 15px;
             }
         }
 
         @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+                padding: 12px;
+            }
+
             th, td {
-                padding: 8px;
+                padding: 10px 12px;
                 font-size: 13px;
             }
 
-            h3 {
-                font-size: 20px;
+            .site-status {
+                padding: 12px 16px;
+            }
+
+            .footer {
+                padding: 20px;
+                margin-top: 40px;
             }
         }
     </style>
     <title>IP</title>
 </head>
 <body>
+    <!-- 主题切换按钮 -->
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+        <span id="theme-icon">🌙</span>
+    </button>
+
+    <!-- 页面标题 -->
+    <div class="page-header">
+        <h1 class="page-title" data-en="IP Detection Tool" data-zh="IP 检测工具">IP Detection Tool</h1>
+        <p class="page-subtitle" data-en="Real-time detection of your network connection information and website availability" data-zh="实时检测您的网络连接信息和网站可用性">Real-time detection of your network connection information and website availability</p>
+    </div>
+
+    <!-- IP信息表格 -->
     <div class="table-container">
         <table id="ipResults">
             <tr>
@@ -257,9 +574,13 @@
         </table>
     </div>
 
-    <button onclick="location.reload()">Refresh Page</button>
+    <!-- 刷新按钮 -->
+    <button class="refresh-button" onclick="location.reload()" data-en="🔄 Refresh Page" data-zh="🔄 刷新页面">
+        🔄 Refresh Page
+    </button>
 
-    <h3>Availabilities</h3>
+    <!-- 网站可用性检测 -->
+    <div class="section-title" data-en="🌐 Website Availability Check" data-zh="🌐 网站可用性检测">🌐 Website Availability Check</div>
     <div id="result"></div>
 
     <script>
@@ -342,13 +663,13 @@
                         ipText.textContent = ip;
                         
                         const copyButton = document.createElement('button');
-                        copyButton.textContent = '复制';
+                        copyButton.textContent = getCurrentLanguage() === 'zh' ? '复制' : 'Copy';
                         copyButton.className = 'copy-button';
                         copyButton.onclick = () => {
                             navigator.clipboard.writeText(ip).then(() => {
-                                copyButton.textContent = '已复制!';
+                                copyButton.textContent = getCurrentLanguage() === 'zh' ? '已复制!' : 'Copied!';
                                 setTimeout(() => {
-                                    copyButton.textContent = '复制';
+                                    copyButton.textContent = getCurrentLanguage() === 'zh' ? '复制' : 'Copy';
                                 }, 2000);
                             });
                         };
@@ -420,7 +741,8 @@
             // 创建网站名称元素
             const nameSpan = document.createElement('span');
             nameSpan.textContent = website;
-            
+            nameSpan.className = 'site-name';
+
             // 创建响应时间元素
             const responseTime = document.createElement('span');
             responseTime.className = 'response-time';
@@ -437,7 +759,13 @@
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), timeout);
 
-            fetch(`https://${website}/favicon.ico`, {
+            // 为特定网站使用更可靠的检测路径
+            let testUrl = `https://${website}/favicon.ico`;
+            if (website === 'chatgpt.com') {
+                testUrl = `https://${website}/cdn-cgi/trace`; // ChatGPT的Cloudflare trace端点
+            }
+
+            fetch(testUrl, {
                 mode: 'no-cors',
                 signal: controller.signal
             })
@@ -457,6 +785,73 @@
                 clearTimeout(timeoutId);
             });
         }
+
+        // 语言检测和切换功能
+        function getCurrentLanguage() {
+            const savedLang = localStorage.getItem('language');
+            if (savedLang) return savedLang;
+
+            const browserLang = navigator.language || navigator.userLanguage;
+            return browserLang.startsWith('zh') ? 'zh' : 'en';
+        }
+
+        function updateLanguage(lang) {
+            const elements = document.querySelectorAll('[data-en][data-zh]');
+            elements.forEach(element => {
+                const text = lang === 'zh' ? element.getAttribute('data-zh') : element.getAttribute('data-en');
+                element.textContent = text;
+            });
+
+            // 更新主题切换按钮的title
+            const themeToggle = document.querySelector('.theme-toggle');
+            themeToggle.title = lang === 'zh' ? '切换主题' : 'Toggle Theme';
+
+            localStorage.setItem('language', lang);
+        }
+
+        // 主题切换功能
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            const currentTheme = body.getAttribute('data-theme');
+
+            if (currentTheme === 'dark') {
+                body.removeAttribute('data-theme');
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // 页面加载时应用保存的主题和语言
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化主题
+            const savedTheme = localStorage.getItem('theme');
+            const themeIcon = document.getElementById('theme-icon');
+
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                themeIcon.textContent = '☀️';
+            } else {
+                themeIcon.textContent = '🌙';
+            }
+
+            // 初始化语言
+            const currentLang = getCurrentLanguage();
+            updateLanguage(currentLang);
+        });
+
+        // 添加页面加载动画
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
     </script>
 
     <script type="application/javascript" src="https://vv.video.qq.com/checktime?otype=json&callback=getip2"></script>
@@ -466,7 +861,12 @@
         getip5();
     </script>
     <div class="footer">
-        Powered by <a href="https://nnmm.fun">Zivan</a>, <a href="https://gemini.google.com">Gemini</a>, <a href="https://chatgpt.com">ChatGPT</a> & <a href="https://github.com/codeium">Codeium</a>
+        <span data-en="Powered by" data-zh="技术支持">Powered by</span>
+        <a href="https://nnmm.fun">Zivan</a>,
+        <a href="https://www.anthropic.com">Augment Agent</a>,
+        <a href="https://gemini.google.com">Gemini</a>,
+        <a href="https://chatgpt.com">ChatGPT</a> &
+        <a href="https://github.com/codeium">Codeium</a>
     </div>
 </body>
 </html>
