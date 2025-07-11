@@ -3,40 +3,8 @@
 ```docker pull ghcr.io/zivan80/aquarzray:latest```
 或者
 ```docker pull aquarz/aquarzray```
-#### 命令行用:
-```docker volume create xray_keys
-docker run -d --name aquarzray --restart always \
--p 443:443 \
--v xray_keys:/app/keys \
--e SERVER_IP=YOUR_SERVER_IP \
--e UUID=YOUR_UUID \
--e REALITY_DEST=www.microsoft.com:443 \
--e REALITY_SERVER_NAMES=www.microsoft.com \
--e FINGERPRINT=firefox \
-aquarzray:latest```
+#### [配置说明](https://hub.docker.com/r/aquarz/aquarzray)
 
-#### docker-compose.yaml
-```services:
-  xray:
-    image: aquarzray:latest
-    container_name: aquarzray
-    restart: always
-    ports:
-      - "443:443"
-    volumes:
-      - ./config.env:/app/config.env
-      - xray_keys:/app/keys
-
-volumes:
-  xray_keys:```
-#### config.env 环境变量
-```SERVER_IP=YOUR_SERVER_IP
-
-UUID=87da4aff-03ad-40a9-86ae-ec6f6e2de620
-#UUID command: cat /proc/sys/kernel/random/uuid
-REALITY_DEST=www.microsoft.com:443
-REALITY_SERVER_NAMES=www.microsoft.com
-FINGERPRINT=firefox```
 ### 一个好用的API
 ```
 curl 3.0.3.0/ip/8.8.8.8
