@@ -4,8 +4,7 @@
 或者
 ```docker pull aquarz/aquarzray```
 #### 命令行用:
-```
-docker volume create xray_keys
+```docker volume create xray_keys
 docker run -d --name aquarzray --restart always \
 -p 443:443 \
 -v xray_keys:/app/keys \
@@ -14,11 +13,10 @@ docker run -d --name aquarzray --restart always \
 -e REALITY_DEST=www.microsoft.com:443 \
 -e REALITY_SERVER_NAMES=www.microsoft.com \
 -e FINGERPRINT=firefox \
-aquarzray:latest
-```
+aquarzray:latest```
+
 #### docker-compose.yaml
-```
-services:
+```services:
   xray:
     image: aquarzray:latest
     container_name: aquarzray
@@ -30,18 +28,15 @@ services:
       - xray_keys:/app/keys
 
 volumes:
-  xray_keys:
-```
+  xray_keys:```
 #### config.env 环境变量
-```
-SERVER_IP=YOUR_SERVER_IP
+```SERVER_IP=YOUR_SERVER_IP
 
 UUID=87da4aff-03ad-40a9-86ae-ec6f6e2de620
 #UUID command: cat /proc/sys/kernel/random/uuid
 REALITY_DEST=www.microsoft.com:443
 REALITY_SERVER_NAMES=www.microsoft.com
-FINGERPRINT=firefox
-```
+FINGERPRINT=firefox```
 ### 一个好用的API
 ```
 curl 3.0.3.0/ip/8.8.8.8
