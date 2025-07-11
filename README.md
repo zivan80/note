@@ -3,7 +3,7 @@
 ```docker pull ghcr.io/zivan80/aquarzray:latest```
 或者
 ```docker pull aquarz/aquarzray```
-#### [配置说明](https://hub.docker.com/r/aquarz/aquarzray)
+- [配置说明](https://hub.docker.com/r/aquarz/aquarzray)
 
 ### 一个好用的API
 ```
