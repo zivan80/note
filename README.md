@@ -1,6 +1,8 @@
 # zivan的记事本
 ### 为了方便封个reality的镜像
 ```docker pull ghcr.io/zivan80/aquarzray:latest```
+或者
+```docker pull aquarz/aquarzray```
 #### 命令行用:
 ```docker volume create xray_keys
 
