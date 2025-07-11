@@ -4,8 +4,8 @@
 或者
 ```docker pull aquarz/aquarzray```
 #### 命令行用:
-```docker volume create xray_keys
-
+```
+docker volume create xray_keys
 docker run -d --name aquarzray --restart always \
 -p 443:443 \
 -v xray_keys:/app/keys \
@@ -33,8 +33,9 @@ volumes:
   xray_keys:
 ```
 #### config.env 环境变量
-SERVER_IP=YOUR_SERVER_IP
 ```
+SERVER_IP=YOUR_SERVER_IP
+
 UUID=87da4aff-03ad-40a9-86ae-ec6f6e2de620
 #UUID command: cat /proc/sys/kernel/random/uuid
 REALITY_DEST=www.microsoft.com:443
