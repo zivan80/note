@@ -1,4 +1,4 @@
-mp#EXTM3U x-tvg-url="https://epg.112114.xyz/pp.xml.gz"
+#EXTM3U x-tvg-url="https://epg.112114.xyz/pp.xml.gz"
 #EXTINF:-1,tvg-id="NBATV" tvg-name="NBATV" tvg-logo="https://epg.v1.mk/logo/NBATV.png" group-title="精选体育",NBA TV2
 http://170.yfvodcdn.com:19980/live/nbaTV2/hls.m3u8
 
