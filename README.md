@@ -19,5 +19,5 @@ curl 3.0.3.0/ip/8.8.8.8
 
 ### 用GPT写了一个方便查IP的页面
 - [GitHub上](https://zivan80.github.io/note/checkip)
-- [Cloudflare上](https://ip.nnmm.fun)
+- [Cloudflare上](https://zzy.de5.net)
 - [serv00](https://zivan.pp.ua)
